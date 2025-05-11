@@ -70,7 +70,7 @@ import 'leaflet-fullscreen/dist/leaflet.fullscreen.css'
 import 'leaflet-draw'    // 引入绘图组件
 import 'leaflet-draw/dist/leaflet.draw.css'
 import markerIcon from 'leaflet/dist/images/marker-icon.png'
-import markerIcon1 from 'leaflet/dist/images/marker-icon-yellow.png'
+// import markerIcon1 from 'leaflet/dist/images/marker-icon-yellow.png'
 import axios from 'axios'
 import {getPoints, searchPoint} from "@/assets/js/api/common-api";
 

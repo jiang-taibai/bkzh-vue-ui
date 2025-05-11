@@ -1,5 +1,5 @@
 <script>
-import {mapActions} from 'vuex'
+import {eventBus} from '@/assets/js/bus'
 
 export default {
   name: "MapComponent",
@@ -31,10 +31,6 @@ export default {
   },
   computed: {},
   methods: {
-    ...mapActions({
-      // 映射 this.setBkzhImageAction 为派发 action 的方法
-      setImage: 'setBkzhImageAction'
-    }),
     initMap() {
       //定义地图中心点坐标
       const center = new TMap.LatLng(19.099419, 109.681782)
@@ -67,7 +63,7 @@ export default {
       this.$shared.marker = marker
 
       // 2. 监听地图点击事件
-      marker.on('hover', function (event) {
+      marker.on('click', function (event) {
         const base64 = (
             event &&
             event.geometry &&
@@ -75,7 +71,7 @@ export default {
             event.geometry.properties.picture
         ) || ''
         if (!base64) return
-        this.setImage(base64)
+        eventBus.$emit('bkzh-image-change', {base64: base64});
       });
     }
   },

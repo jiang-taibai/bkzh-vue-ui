@@ -9,16 +9,8 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-// import * as L from 'leaflet'
-// import 'leaflet/dist/leaflet.css'
-
-// 跨组件事件总线
-import {bus} from './assets/js/bus'
-Vue.prototype.$bus = bus
-
 Vue.use(router);
 Vue.use(ElementUI);
-Vue.use(store);
 Vue.use(VueAxios, axios);
 import {Popover} from 'element-ui';
 
@@ -26,7 +18,6 @@ Vue.use(Popover);
 Vue.use(VueBus);
 
 Vue.config.productionTip = false
-// Vue.L = Vue.prototype.$L = L
 
 // 定义一个你要共享的对象
 const shared = {

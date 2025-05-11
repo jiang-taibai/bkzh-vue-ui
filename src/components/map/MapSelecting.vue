@@ -56,7 +56,7 @@ export default {
 
 <template>
   <div>
-    <el-select v-model="form.city" placeholder="请选择市县" @change="jumpToCity">
+    <el-select style="width: 100%" v-model="form.city" placeholder="请选择市县" @change="jumpToCity">
       <el-option v-for="city in cities"
                  :key="city.code" :label="city.label" :value="city.code">
       </el-option>

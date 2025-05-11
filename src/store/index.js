@@ -8,11 +8,13 @@ export default new Vuex.Store({
 	state: {
 		isLogin: false,
 		userName: "",
+		bkzhImage: "",
 	},
 	//获取属性的状态
 	getters: {
 		isLogin: state => state.isLogin,
 		userName: state => state.userName,
+		bkzhImage: state => state.bkzhImage,
 	},
 	//设置属性状态
 	mutations: {
@@ -24,6 +26,9 @@ export default new Vuex.Store({
 		setUserName(state, name){
 			state.userName = name
 		},
+		setBkzhImage(state, image){
+			state.bkzhImage = image
+		}
 	},
 	//应用mutations
 	actions: {
@@ -35,5 +40,8 @@ export default new Vuex.Store({
 		setUserNameAction({commit}, name){
 			commit("setUserName", name)
 		},
+		setBkzhImageAction({commit}, image){
+			commit("setBkzhImage", image)
+		}
 	}
 })
